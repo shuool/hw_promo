@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3ebe4">
+  <meta name="description" content="会玩小小攻略 · 招收赞助商。题库、工具、活动房间，赞助位展示在「我的」页。">
+  <title>会玩小小攻略 · 赞助合作</title>
+  <link rel="icon" href="./images/app-icon.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #2f2824;
+      --ink-soft: #5c524a;
+      --muted: #8d8379;
+      --paper: #f3ebe4;
+      --paper-2: #faf6f1;
+      --rose: #a7676b;
+      --rose-deep: #8f5256;
+      --line: rgba(47, 40, 36, 0.1);
+      --shadow: 0 18px 40px rgba(89, 74, 60, 0.14);
+      --font-display: "ZCOOL XiaoWei", "Noto Serif SC", "Songti SC", serif;
+      --font-body: "Noto Serif SC", "Songti SC", "STSong", serif;
+      --phone-w: min(72vw, 280px);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--font-body);
+      background:
+        radial-gradient(120% 60% at 50% -10%, rgba(167, 103, 107, 0.14), transparent 55%),
+        radial-gradient(80% 40% at 100% 20%, rgba(201, 170, 120, 0.12), transparent 50%),
+        var(--paper);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* —— Hero —— */
+    .hero {
+      padding:
+        calc(28px + env(safe-area-inset-top, 0px))
+        0
+        36px;
+      text-align: center;
+    }
+    .brand-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      animation: rise 0.7s ease both;
+    }
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 8px 18px rgba(167, 103, 107, 0.28);
+    }
+    .brand {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(28px, 8vw, 40px);
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      line-height: 1.2;
+    }
+    .hero h1 {
+      margin: 0 auto 12px;
+      max-width: 16em;
+      font-size: clamp(20px, 5.4vw, 28px);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      line-height: 1.4;
+      animation: rise 0.75s ease 0.05s both;
+    }
+    .hero-lead {
+      margin: 0 auto 22px;
+      max-width: 22em;
+      color: var(--ink-soft);
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      animation: rise 0.75s ease 0.1s both;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 28px;
+      animation: rise 0.75s ease 0.14s both;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      transition: transform 0.18s ease, background 0.18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active { transform: translateY(1px) scale(0.98); }
+    .btn-primary {
+      background: linear-gradient(160deg, #c4898c, var(--rose));
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(167, 103, 107, 0.28);
+    }
+    .btn-ghost {
+      border-color: rgba(167, 103, 107, 0.28);
+      background: rgba(255, 252, 247, 0.75);
+      color: var(--rose-deep);
+    }
+
+    .hero-phone {
+      margin: 0 auto;
+      width: var(--phone-w);
+      animation: float-in 0.9s ease 0.18s both;
+    }
+
+    /* —— Phone frame —— */
+    .phone {
+      position: relative;
+      width: 100%;
+      border-radius: 28px;
+      padding: 10px;
+      background: linear-gradient(160deg, #3a3330, #211c1a);
+      box-shadow:
+        var(--shadow),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      width: 68px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.45);
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .phone-screen {
+      display: block;
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #f8f6f1;
+      aspect-ratio: 390 / 844;
+      height: auto;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    /* —— Gallery —— */
+    .gallery {
+      padding: 8px 0 40px;
+    }
+    .gallery-head {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .kicker {
+      margin: 0 0 8px;
+      color: var(--rose);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+    }
+    .title {
+      margin: 0 0 8px;
+      font-family: var(--font-display);
+      font-size: clamp(24px, 6vw, 34px);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      line-height: 1.25;
+    }
+    .sub {
+      margin: 0 auto;
+      max-width: 24em;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+    .rail {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding: 8px 16px 18px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .rail::-webkit-scrollbar { display: none; }
+    .rail-item {
+      flex: 0 0 auto;
+      width: min(58vw, 220px);
+      scroll-snap-align: center;
+    }
+    .rail-item .phone { border-radius: 24px; padding: 8px; }
+    .rail-item .phone::before { width: 52px; top: 12px; }
+    .rail-item .phone-screen {
+      border-radius: 16px;
+      aspect-ratio: 390 / 844;
+    }
+    .rail-cap {
+      margin: 10px 0 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    /* —— Desktop / laptop frames —— */
+    .admin-show {
+      padding: 8px 0 40px;
+    }
+    .admin-show .gallery-head { margin-bottom: 18px; }
+    .laptop-stack {
+      display: grid;
+      gap: 28px;
+    }
+    .laptop {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .laptop-lid {
+      position: relative;
+      padding: 10px 10px 8px;
+      border-radius: 14px 14px 8px 8px;
+      background: linear-gradient(160deg, #3a3532, #1f1b19);
+      box-shadow:
+        var(--shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+    .laptop-camera {
+      width: 6px;
+      height: 6px;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      background: #4a4440;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+    .laptop-screen {
+      display: block;
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #111;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .laptop-base {
+      position: relative;
+      height: 12px;
+      margin: 0 auto;
+      width: 108%;
+      margin-left: -4%;
+      border-radius: 0 0 10px 10px;
+      background: linear-gradient(180deg, #4a443f, #2c2825);
+      box-shadow: 0 10px 18px rgba(47, 40, 36, 0.18);
+    }
+    .laptop-base::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 3px;
+      width: 56px;
+      height: 4px;
+      border-radius: 0 0 6px 6px;
+      background: #1a1715;
+      transform: translateX(-50%);
+    }
+    .laptop-cap {
+      margin: 12px 0 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    /* —— Benefits —— */
+    .benefits {
+      padding: 12px 0 44px;
+    }
+    .benefit-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+    .benefit-list li {
+      padding: 16px 16px 15px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 252, 247, 0.88);
+      box-shadow: 0 8px 20px rgba(89, 74, 60, 0.05);
+    }
+    .benefit-list strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 16px;
+      letter-spacing: 0.04em;
+    }
+    .benefit-list span {
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+
+    /* —— Contact —— */
+    .contact {
+      margin: 0 16px 28px;
+      padding: 28px 20px 26px;
+      border-radius: 24px;
+      background:
+        linear-gradient(165deg, rgba(55, 46, 42, 0.96), rgba(36, 30, 27, 0.98));
+      color: #fff7f2;
+      text-align: center;
+      box-shadow: 0 16px 36px rgba(47, 40, 36, 0.18);
+    }
+    .contact .kicker { color: #e2b4b6; }
+    .contact .title { color: #fff7f2; }
+    .contact .sub { color: rgba(255, 247, 242, 0.78); }
+    .contact-meta {
+      margin: 18px 0 16px;
+      display: grid;
+      gap: 8px;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+    }
+    .contact-meta b {
+      font-size: 18px;
+      letter-spacing: 0.1em;
+    }
+    .contact .btn-primary {
+      width: min(100%, 280px);
+    }
+    .contact .btn-ghost {
+      border-color: rgba(255, 247, 242, 0.28);
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff7f2;
+      width: min(100%, 280px);
+    }
+    .contact .cta-row { margin-bottom: 0; }
+
+    .foot {
+      padding: 8px 16px calc(24px + env(safe-area-inset-bottom, 0px));
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float-in {
+      from { opacity: 0; transform: translateY(24px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 28px;
+        align-items: center;
+        text-align: left;
+        padding: 56px 0 48px;
+      }
+      .hero-copy { padding-left: 8px; }
+      .brand-row { justify-content: flex-start; }
+      .hero h1,
+      .hero-lead { margin-left: 0; margin-right: 0; }
+      .cta-row { justify-content: flex-start; }
+      .hero-phone {
+        width: min(320px, 34vw);
+        margin: 0 auto;
+      }
+      .rail {
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .rail-item { width: 210px; }
+      .benefit-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .laptop-stack {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .laptop-lid { padding: 12px 12px 10px; border-radius: 16px 16px 10px 10px; }
+      .laptop-base { height: 14px; }
+      .contact {
+        margin-left: auto;
+        margin-right: auto;
+        width: min(1120px, calc(100% - 32px));
+      }
+      .contact .cta-row { justify-content: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .brand-row,
+      .hero h1,
+      .hero-lead,
+      .cta-row,
+      .hero-phone {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero wrap">
+    <div class="hero-copy">
+      <div class="brand-row">
+        <img class="brand-icon" src="./images/app-icon.jpg" alt="" width="44" height="44">
+        <p class="brand">会玩小小攻略</p>
+      </div>
+      <h1>把你的名字，留在玩家每天打开的地方</h1>
+      <p class="hero-lead">招收赞助商：稳定曝光、活动宣传位，以及「我的」页长期展示。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">成为赞助商</a>
+        <a class="btn btn-ghost" href="#shots">看产品界面</a>
+      </div>
+    </div>
+    <div class="hero-phone">
+      <div class="phone">
+        <img class="phone-screen" src="./images/shot-bank.png?v=3" alt="题库页真实截图" width="390" height="844">
+      </div>
+    </div>
+  </header>
+
+  <section class="gallery" id="shots">
+    <div class="gallery-head wrap">
+      <p class="kicker">PRODUCT</p>
+      <h2 class="title">真实产品截图</h2>
+      <p class="sub">左右滑动：题库、工具、拆弹猫、活动与赞助展示位。</p>
+    </div>
+    <div class="rail" aria-label="产品截图滑动区">
+      <figure class="rail-item">
+        <div class="phone">
+          <img class="phone-screen" src="./images/shot-bank.png?v=3" alt="题库页截图" width="390" height="844" loading="lazy">
+        </div>
+        <figcaption class="rail-cap">题库速查</figcaption>
+      </figure>
+      <figure class="rail-item">
+        <div class="phone">
+          <img class="phone-screen" src="./images/shot-guide.png?v=3" alt="工具攻略页截图" width="390" height="844" loading="lazy">
+        </div>
+        <figcaption class="rail-cap">工具 / 攻略</figcaption>
+      </figure>
+      <figure class="rail-item">
+        <div class="phone">
+          <img class="phone-screen" src="./images/shot-xwcalc.png?v=3" alt="修为计算器截图" width="390" height="844" loading="lazy">
+        </div>
+        <figcaption class="rail-cap">修为计算器</figcaption>
+      </figure>
+      <figure class="rail-item">
+        <div class="phone">
+          <img class="phone-screen" src="./images/shot-cat.png?v=3" alt="拆弹猫页截图" width="390" height="844" loading="lazy">
+        </div>
+        <figcaption class="rail-cap">拆弹猫牌数</figcaption>
+      </figure>
+      <figure class="rail-item">
+        <div class="phone">
+          <img class="phone-screen" src="./images/shot-activity.png?v=3" alt="活动房间页截图" width="390" height="844" loading="lazy">
+        </div>
+        <figcaption class="rail-cap">活动 / 房间</figcaption>
+      </figure>
+      <figure class="rail-item">
+        <div class="phone">
+          <img class="phone-screen" src="./images/shot-mine.png?v=3" alt="我的页赞助商截图" width="390" height="844" loading="lazy">
+        </div>
+        <figcaption class="rail-cap">赞助商展示位</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="admin-show wrap" id="admin">
+    <div class="gallery-head">
+      <p class="kicker">ADMIN</p>
+      <h2 class="title">管理后台</h2>
+      <p class="sub">登录页与题库管理，电脑框展示。</p>
+    </div>
+    <div class="laptop-stack">
+      <figure class="laptop">
+        <div class="laptop-lid">
+          <div class="laptop-camera" aria-hidden="true"></div>
+          <img class="laptop-screen" src="./images/admin-login.jpg?v=1" alt="小小会玩管理后台登录" width="1024" height="500" loading="lazy">
+        </div>
+        <div class="laptop-base" aria-hidden="true"></div>
+        <figcaption class="laptop-cap">后台登录</figcaption>
+      </figure>
+      <figure class="laptop">
+        <div class="laptop-lid">
+          <div class="laptop-camera" aria-hidden="true"></div>
+          <img class="laptop-screen" src="./images/admin-questions.png?v=1" alt="题库管理后台界面" width="1024" height="565" loading="lazy">
+        </div>
+        <div class="laptop-base" aria-hidden="true"></div>
+        <figcaption class="laptop-cap">题库管理</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="benefits wrap" id="benefit">
+    <p class="kicker">SPONSOR</p>
+    <h2 class="title">赞助能得到什么</h2>
+    <p class="sub">跟着日常使用反复出现，而不是一次性刷屏。</p>
+    <ul class="benefit-list">
+      <li>
+        <strong>「我的」页常驻展示</strong>
+        <span>头像、名称、会玩 ID / 微信与简介，玩家可点开查看。</span>
+      </li>
+      <li>
+        <strong>活动宣传优先沟通</strong>
+        <span>需要曝光的活动可联系作者；赞助商可免费提供宣传位。</span>
+      </li>
+      <li>
+        <strong>资源贡献致谢</strong>
+        <span>提供题库等信息的伙伴，也会在相关页面获得展示机会。</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="contact" id="contact">
+    <p class="kicker">CONTACT</p>
+    <h2 class="title">聊聊合作</h2>
+    <p class="sub">加微信或进房找我，说明想展示的内容与期望位置。</p>
+    <div class="contact-meta">
+      <div>微信<br><b>Fanys0507</b></div>
+      <div>会玩房间号<br><b>503123</b></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">微信 Fanys0507</a>
+      <a class="btn btn-ghost" href="#contact">房间号 503123</a>
+    </div>
+  </section>
+
+  <footer class="foot">会玩小小攻略 · 赞助合作页 · ©by_fanys</footer>
+</body>
+</html>
