@@ -1,0 +1,412 @@
+// 小小会玩 · 页面内容配置（支持 // 注释）
+// 改完保存，双击「更新页面.cmd」或运行 node build.js 重新生成页面。
+// 文本里的 \n 表示换行；图片路径相对于本文件。
+{
+  // 站点基础信息：浏览器标题、分享描述、图标、主题色
+  "site": {
+    "title": "小小会玩 · 官方主页",
+    "description": "小小会玩官方主页：题库速查、修仙工具、秘境倒计时与活动房间，并开放赞助合作与共同开发。",
+    "themeColor": "#05070f",
+    "logo": "./images/app-icon.jpg",
+    "name": "小小会玩",
+    "sub": "OFFICIAL HOME"
+  },
+  // 背景图：手机用竖版，宽屏用横版
+  "backgrounds": {
+    "portrait": "./images/bg-starry-portrait-s.jpg",
+    "wide": "./images/bg-starry-wide-s.jpg"
+  },
+  // 顶部导航、右上角按钮、通用小标签
+  "nav": [
+    {
+      "label": "功能",
+      "href": "#features"
+    },
+    {
+      "label": "工具",
+      "href": "#tools"
+    },
+    {
+      "label": "后台",
+      "href": "#admin"
+    },
+    {
+      "label": "合作",
+      "href": "#join"
+    },
+    {
+      "label": "作者",
+      "href": "#author"
+    }
+  ],
+  "headerCta": {
+    "label": "赞助合作",
+    "href": "./sponsor.html"
+  },
+  // 顶部「打开小小会玩」按钮：href 为 "#" 时点击弹出未发布提示，后期换成真实下载/跳转地址
+  "app": {
+    "button": "打开小小会玩",
+    "short": "打开",
+    "href": "#",
+    "badge": "APP · 暂未发布",
+    "title": "小小会玩暂未发布",
+    "desc": "App 还在最后调试，暂时下载不到。赞助会用在服务器、上架和后续开发上；想第一时间玩到，先加微信留个位置。",
+    "primary": {
+      "label": "成为赞助伙伴",
+      "href": "./sponsor.html"
+    },
+    "copyLabel": "加微信",
+    "copyValue": "Fanys0507",
+    "note": "微信 Fanys0507 · 房间 503123"
+  },
+  "labels": {
+    "copy": "复制",
+    "copied": "已复制",
+    "backHome": "回首页"
+  },
+  // 首屏：标题两行、说明、两个按钮、两个数字、三张手机截图
+  "hero": {
+    "badge": "小小会玩 · 官方主页",
+    "title": [
+      "会玩的每一局，",
+      "都不靠猜"
+    ],
+    "lead": "题目、修为、倒计时、房间，一个地方全查到。",
+    "primary": {
+      "label": "成为赞助伙伴",
+      "href": "./sponsor.html"
+    },
+    "secondary": {
+      "label": "看看能做什么",
+      "href": "#features"
+    },
+    "stats": [
+      {
+        "value": "149",
+        "label": "题库条目"
+      },
+      {
+        "value": "11",
+        "label": "工具攻略分类"
+      }
+    ],
+    "phones": {
+      "main": {
+        "src": "./images/题库.png",
+        "alt": "题库页面：搜索题目与奖励标签"
+      },
+      "left": {
+        "src": "./images/时间查看器.png",
+        "alt": ""
+      },
+      "right": {
+        "src": "./images/我的.png",
+        "alt": ""
+      }
+    },
+    "chips": [
+      {
+        "text": "题库已收录 149 题",
+        "pos": "a"
+      },
+      {
+        "text": "秘境倒计时 00:09:25",
+        "pos": "b"
+      }
+    ]
+  },
+  // 01 功能：四张入口卡，icon 可选 search / tool / pin / user
+  "features": {
+    "kicker": "01 / 功能",
+    "title": "四种玩法，四个入口",
+    "items": [
+      {
+        "icon": "search",
+        "title": "题库速查",
+        "desc": "题干、选项与奖励，搜一下就出来。"
+      },
+      {
+        "icon": "tool",
+        "title": "工具 / 攻略",
+        "desc": "该算的算，该等的等，攻略按玩法归档。"
+      },
+      {
+        "icon": "pin",
+        "title": "活动 / 房间",
+        "desc": "活动置顶，房间号一键复制。"
+      },
+      {
+        "icon": "user",
+        "title": "我的 / 赞助",
+        "desc": "头框、展示页和留言都在这页。"
+      }
+    ]
+  },
+  // 02 工具：每张卡一张手机截图 + 名称 + 一行说明
+  "tools": {
+    "kicker": "02 / 工具",
+    "title": "每天都会打开的那几个",
+    "more": {
+      "title": "更多在路上",
+      "desc": "自动化、悬浮窗搜题、小程序版。"
+    },
+    "items": [
+      {
+        "image": "./images/修仙计算器.png",
+        "alt": "修仙计算器界面",
+        "name": "修仙计算器",
+        "desc": "心法、功法、道心一起算，直接给用时。"
+      },
+      {
+        "image": "./images/时间查看器.png",
+        "alt": "时间查看器界面",
+        "name": "时间查看器",
+        "desc": "秘境、飞升、赛季、灵泉倒计时。"
+      },
+      {
+        "image": "./images/天书任务.png",
+        "alt": "天书任务界面",
+        "name": "天书任务",
+        "desc": "一周任务与活跃度奖励对照。"
+      },
+      {
+        "image": "./images/拆弹猫.png",
+        "alt": "拆弹猫记牌界面",
+        "name": "拆弹猫记牌",
+        "desc": "标准牌堆与 6 人局牌数参考。"
+      },
+      {
+        "image": "./images/透明头像工具制作.png",
+        "alt": "透明头像生成界面",
+        "name": "透明头像",
+        "desc": "浏览器里做透明底头像，直接导出。"
+      }
+    ]
+  },
+  // 03 后台：两张后台截图，点击可看大图
+  "admin": {
+    "kicker": "03 / 后台",
+    "title": "内容自己管",
+    "desc": "题库、活动、房间、赞助与权限，一套后台全管。高级赞助可开专属账号。",
+    "shots": [
+      {
+        "image": "./images/后台.png",
+        "alt": "后台首页",
+        "caption": "后台首页"
+      },
+      {
+        "image": "./images/后台题库.png",
+        "alt": "题库管理",
+        "caption": "题库管理"
+      }
+    ]
+  },
+  // 04 合作：赞助 / 开发两张卡，cta 指向独立页面
+  "join": {
+    "kicker": "04 / 合作",
+    "title": "一起把它做久一点",
+    "desc": "资源让它跑下去，伙伴让它跑得更快。",
+    "cards": [
+      {
+        "kind": "sponsor",
+        "title": "赞助伙伴",
+        "sub": "名字留在玩家每天打开的地方",
+        "points": [
+          "首页与「我的」页长期展示位",
+          "活动推荐优先，赞助内容靠前",
+          "专属头框与独立展示页",
+          "高级赞助开放后台账号"
+        ],
+        "cta": {
+          "label": "查看赞助方案",
+          "href": "./sponsor.html"
+        }
+      },
+      {
+        "kind": "dev",
+        "title": "开发伙伴",
+        "sub": "把想法变成能跑起来的东西",
+        "points": [
+          "招全栈 / 前端，共建站点与后台",
+          "自动化、App、小程序排队开发",
+          "题库与攻略供稿，采纳后署名"
+        ],
+        "cta": {
+          "label": "了解合作方式",
+          "href": "./join.html"
+        }
+      }
+    ]
+  },
+  // 小玩具：按钮放在首屏「成为赞助」同一行，href 填 "#" 时点击只弹提示，后期换成真链接
+  "toy": {
+    "button": "饭烁的小玩具",
+    "href": "#",
+    "tip": "小玩具马上就来 ✦"
+  },
+  // 作者资料：头像、名字、身份、ID / 房间 / 微信
+  "author": {
+    "kicker": "05 / 作者",
+    "title": "站点背后的人",
+    "desc": "赞助、合作、提需求，直接找我。",
+    "name": "饭烁",
+    "role": "全栈工程开发 · 小小会玩作者",
+    "bio": "写页面、写后台，也写这些小工具。",
+    "avatar": "./images/app-icon.jpg",
+    "fields": [
+      {
+        "label": "会玩 ID",
+        "value": "bieqiangwodebabiwawa"
+      },
+      {
+        "label": "房间号",
+        "value": "503123"
+      },
+      {
+        "label": "微信",
+        "value": "Fanys0507"
+      }
+    ],
+    "actions": [
+      {
+        "label": "加微信聊",
+        "copy": "Fanys0507"
+      },
+      {
+        "label": "逛逛小站",
+        "href": "#tools"
+      }
+    ]
+  },
+  // 页脚与手机底部导航
+  "footer": {
+    "line1": "小小会玩 · 官方主页",
+    "line2": "© by_fanys"
+  },
+  "dock": [
+    {
+      "label": "功能",
+      "icon": "grid",
+      "href": "#features"
+    },
+    {
+      "label": "工具",
+      "icon": "tool",
+      "href": "#tools"
+    },
+    {
+      "label": "赞助",
+      "icon": "star",
+      "href": "#join"
+    },
+    {
+      "label": "作者",
+      "icon": "user",
+      "href": "#author"
+    }
+  ],
+  // 赞助页：点首页「赞助合作」进入，内容独立
+  "sponsor": {
+    "title": "把你的名字，\n留在玩家每天打开的地方",
+    "kicker": "SPONSOR / 赞助方案",
+    "nav": [
+      {
+        "label": "首页",
+        "href": "./index.html"
+      },
+      {
+        "label": "工具",
+        "href": "./index.html#tools"
+      },
+      {
+        "label": "共同开发",
+        "href": "./join.html"
+      }
+    ],
+    "lead": "权益、展示位和费用一次说清，觉得合适再往下谈。",
+    "badge": "首批伙伴招募中 · 先聊需求再谈费用",
+    "sectionTitle": "赞助能得到什么",
+    "contactTitle": "直接联系",
+    "points": [
+      "首页与「我的」页长期展示位，日常反复露出",
+      "活动推荐优先，赞助内容排在靠前",
+      "专属头框与独立展示页，信息可一键复制",
+      "高级赞助开放后台账号，内容自己维护",
+      "费用用于服务器、域名、广告投放与工具开发"
+    ],
+    "note": "具体档位与价格待定，先加微信说明预期。",
+    "contacts": [
+      {
+        "label": "微信",
+        "value": "Fanys0507"
+      },
+      {
+        "label": "会玩房间",
+        "value": "503123"
+      }
+    ],
+    "cta": "加微信聊",
+    "back": "回首页看产品",
+    "backHref": "./index.html",
+    "footer": "小小会玩 · 赞助方案"
+  },
+  // 共同开发页：点首页「了解合作方式」进入
+  "joinPage": {
+    "title": "把想法，变成\n能跑起来的东西",
+    "kicker": "JOIN US / 共同开发",
+    "nav": [
+      {
+        "label": "首页",
+        "href": "./index.html"
+      },
+      {
+        "label": "工具",
+        "href": "./index.html#tools"
+      },
+      {
+        "label": "赞助方案",
+        "href": "./sponsor.html"
+      }
+    ],
+    "lead": "站点是一个人做起来的，接下来想多几个人一起。",
+    "badge": "长期缺人 · 技术 / 内容都可以聊",
+    "cards": [
+      {
+        "title": "技术共建",
+        "tag": "全栈 / 前端",
+        "points": [
+          "页面、接口、数据，按模块分工",
+          "自动化、悬浮窗搜题、小程序版",
+          "长期共建、单点支援都可以聊"
+        ]
+      },
+      {
+        "title": "内容共建",
+        "tag": "题库 / 攻略",
+        "points": [
+          "新题、答案与奖励标签供稿",
+          "攻略按玩法归档，写清步骤",
+          "采纳内容标注来源与署名"
+        ]
+      }
+    ],
+    "sectionTitle": "怎么开始",
+    "contactTitle": "直接联系",
+    "text": "加微信说明你能做什么、想参与哪块，剩下的当面聊。",
+    "contacts": [
+      {
+        "label": "微信",
+        "value": "Fanys0507"
+      },
+      {
+        "label": "会玩房间",
+        "value": "503123"
+      }
+    ],
+    "cta": "加微信聊",
+    "back": "回首页看项目",
+    "backHref": "./index.html",
+    "note": "先把想做的部分说清楚，再定分工和节奏。",
+    "footer": "小小会玩 · 共同开发"
+  }
+}

@@ -1,564 +1,250 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f3ebe4">
-  <meta name="description" content="会玩小小攻略 · 招收赞助商。题库、工具、活动房间，赞助位展示在「我的」页。">
-  <title>会玩小小攻略 · 赞助合作</title>
-  <link rel="icon" href="./images/app-icon.jpg" type="image/jpeg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #2f2824;
-      --ink-soft: #5c524a;
-      --muted: #8d8379;
-      --paper: #f3ebe4;
-      --paper-2: #faf6f1;
-      --rose: #a7676b;
-      --rose-deep: #8f5256;
-      --line: rgba(47, 40, 36, 0.1);
-      --shadow: 0 18px 40px rgba(89, 74, 60, 0.14);
-      --font-display: "ZCOOL XiaoWei", "Noto Serif SC", "Songti SC", serif;
-      --font-body: "Noto Serif SC", "Songti SC", "STSong", serif;
-      --phone-w: min(72vw, 280px);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      font-family: var(--font-body);
-      background:
-        radial-gradient(120% 60% at 50% -10%, rgba(167, 103, 107, 0.14), transparent 55%),
-        radial-gradient(80% 40% at 100% 20%, rgba(201, 170, 120, 0.12), transparent 50%),
-        var(--paper);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-    img { display: block; max-width: 100%; height: auto; }
-    a { color: inherit; text-decoration: none; }
-
-    .wrap {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    /* —— Hero —— */
-    .hero {
-      padding:
-        calc(28px + env(safe-area-inset-top, 0px))
-        0
-        36px;
-      text-align: center;
-    }
-    .brand-row {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
-      animation: rise 0.7s ease both;
-    }
-    .brand-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      object-fit: cover;
-      box-shadow: 0 8px 18px rgba(167, 103, 107, 0.28);
-    }
-    .brand {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(28px, 8vw, 40px);
-      font-weight: 400;
-      letter-spacing: 0.14em;
-      line-height: 1.2;
-    }
-    .hero h1 {
-      margin: 0 auto 12px;
-      max-width: 16em;
-      font-size: clamp(20px, 5.4vw, 28px);
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      line-height: 1.4;
-      animation: rise 0.75s ease 0.05s both;
-    }
-    .hero-lead {
-      margin: 0 auto 22px;
-      max-width: 22em;
-      color: var(--ink-soft);
-      font-size: 14px;
-      letter-spacing: 0.03em;
-      animation: rise 0.75s ease 0.1s both;
-    }
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 28px;
-      animation: rise 0.75s ease 0.14s both;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 20px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      transition: transform 0.18s ease, background 0.18s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .btn:active { transform: translateY(1px) scale(0.98); }
-    .btn-primary {
-      background: linear-gradient(160deg, #c4898c, var(--rose));
-      color: #fff;
-      box-shadow: 0 10px 22px rgba(167, 103, 107, 0.28);
-    }
-    .btn-ghost {
-      border-color: rgba(167, 103, 107, 0.28);
-      background: rgba(255, 252, 247, 0.75);
-      color: var(--rose-deep);
-    }
-
-    .hero-phone {
-      margin: 0 auto;
-      width: var(--phone-w);
-      animation: float-in 0.9s ease 0.18s both;
-    }
-
-    /* —— Phone frame —— */
-    .phone {
-      position: relative;
-      width: 100%;
-      border-radius: 28px;
-      padding: 10px;
-      background: linear-gradient(160deg, #3a3330, #211c1a);
-      box-shadow:
-        var(--shadow),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-    }
-    .phone::before {
-      content: "";
-      position: absolute;
-      top: 16px;
-      left: 50%;
-      width: 68px;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.45);
-      transform: translateX(-50%);
-      z-index: 2;
-    }
-    .phone-screen {
-      display: block;
-      width: 100%;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #f8f6f1;
-      aspect-ratio: 390 / 844;
-      height: auto;
-      object-fit: cover;
-      object-position: top center;
-    }
-
-    /* —— Gallery —— */
-    .gallery {
-      padding: 8px 0 40px;
-    }
-    .gallery-head {
-      text-align: center;
-      margin-bottom: 16px;
-    }
-    .kicker {
-      margin: 0 0 8px;
-      color: var(--rose);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-    }
-    .title {
-      margin: 0 0 8px;
-      font-family: var(--font-display);
-      font-size: clamp(24px, 6vw, 34px);
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      line-height: 1.25;
-    }
-    .sub {
-      margin: 0 auto;
-      max-width: 24em;
-      color: var(--ink-soft);
-      font-size: 14px;
-    }
-    .rail {
-      display: flex;
-      gap: 14px;
-      overflow-x: auto;
-      padding: 8px 16px 18px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .rail::-webkit-scrollbar { display: none; }
-    .rail-item {
-      flex: 0 0 auto;
-      width: min(58vw, 220px);
-      scroll-snap-align: center;
-    }
-    .rail-item .phone { border-radius: 24px; padding: 8px; }
-    .rail-item .phone::before { width: 52px; top: 12px; }
-    .rail-item .phone-screen {
-      border-radius: 16px;
-      aspect-ratio: 390 / 844;
-    }
-    .rail-cap {
-      margin: 10px 0 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-    }
-
-    /* —— Desktop / laptop frames —— */
-    .admin-show {
-      padding: 8px 0 40px;
-    }
-    .admin-show .gallery-head { margin-bottom: 18px; }
-    .laptop-stack {
-      display: grid;
-      gap: 28px;
-    }
-    .laptop {
-      width: 100%;
-      margin: 0 auto;
-    }
-    .laptop-lid {
-      position: relative;
-      padding: 10px 10px 8px;
-      border-radius: 14px 14px 8px 8px;
-      background: linear-gradient(160deg, #3a3532, #1f1b19);
-      box-shadow:
-        var(--shadow),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    }
-    .laptop-camera {
-      width: 6px;
-      height: 6px;
-      margin: 0 auto 8px;
-      border-radius: 50%;
-      background: #4a4440;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-    }
-    .laptop-screen {
-      display: block;
-      width: 100%;
-      border-radius: 4px;
-      overflow: hidden;
-      background: #111;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      object-position: top center;
-    }
-    .laptop-base {
-      position: relative;
-      height: 12px;
-      margin: 0 auto;
-      width: 108%;
-      margin-left: -4%;
-      border-radius: 0 0 10px 10px;
-      background: linear-gradient(180deg, #4a443f, #2c2825);
-      box-shadow: 0 10px 18px rgba(47, 40, 36, 0.18);
-    }
-    .laptop-base::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 3px;
-      width: 56px;
-      height: 4px;
-      border-radius: 0 0 6px 6px;
-      background: #1a1715;
-      transform: translateX(-50%);
-    }
-    .laptop-cap {
-      margin: 12px 0 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-    }
-
-    /* —— Benefits —— */
-    .benefits {
-      padding: 12px 0 44px;
-    }
-    .benefit-list {
-      margin: 18px 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-    .benefit-list li {
-      padding: 16px 16px 15px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255, 252, 247, 0.88);
-      box-shadow: 0 8px 20px rgba(89, 74, 60, 0.05);
-    }
-    .benefit-list strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 16px;
-      letter-spacing: 0.04em;
-    }
-    .benefit-list span {
-      color: var(--ink-soft);
-      font-size: 13px;
-    }
-
-    /* —— Contact —— */
-    .contact {
-      margin: 0 16px 28px;
-      padding: 28px 20px 26px;
-      border-radius: 24px;
-      background:
-        linear-gradient(165deg, rgba(55, 46, 42, 0.96), rgba(36, 30, 27, 0.98));
-      color: #fff7f2;
-      text-align: center;
-      box-shadow: 0 16px 36px rgba(47, 40, 36, 0.18);
-    }
-    .contact .kicker { color: #e2b4b6; }
-    .contact .title { color: #fff7f2; }
-    .contact .sub { color: rgba(255, 247, 242, 0.78); }
-    .contact-meta {
-      margin: 18px 0 16px;
-      display: grid;
-      gap: 8px;
-      font-size: 15px;
-      letter-spacing: 0.04em;
-    }
-    .contact-meta b {
-      font-size: 18px;
-      letter-spacing: 0.1em;
-    }
-    .contact .btn-primary {
-      width: min(100%, 280px);
-    }
-    .contact .btn-ghost {
-      border-color: rgba(255, 247, 242, 0.28);
-      background: rgba(255, 255, 255, 0.06);
-      color: #fff7f2;
-      width: min(100%, 280px);
-    }
-    .contact .cta-row { margin-bottom: 0; }
-
-    .foot {
-      padding: 8px 16px calc(24px + env(safe-area-inset-bottom, 0px));
-      text-align: center;
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: 0.1em;
-    }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes float-in {
-      from { opacity: 0; transform: translateY(24px) scale(0.98); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    @media (min-width: 768px) {
-      .hero {
-        display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 28px;
-        align-items: center;
-        text-align: left;
-        padding: 56px 0 48px;
-      }
-      .hero-copy { padding-left: 8px; }
-      .brand-row { justify-content: flex-start; }
-      .hero h1,
-      .hero-lead { margin-left: 0; margin-right: 0; }
-      .cta-row { justify-content: flex-start; }
-      .hero-phone {
-        width: min(320px, 34vw);
-        margin: 0 auto;
-      }
-      .rail {
-        justify-content: center;
-        padding-left: 0;
-        padding-right: 0;
-      }
-      .rail-item { width: 210px; }
-      .benefit-list {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .laptop-stack {
-        grid-template-columns: 1fr;
-        gap: 36px;
-        max-width: 860px;
-        margin: 0 auto;
-      }
-      .laptop-lid { padding: 12px 12px 10px; border-radius: 16px 16px 10px 10px; }
-      .laptop-base { height: 14px; }
-      .contact {
-        margin-left: auto;
-        margin-right: auto;
-        width: min(1120px, calc(100% - 32px));
-      }
-      .contact .cta-row { justify-content: center; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .brand-row,
-      .hero h1,
-      .hero-lead,
-      .cta-row,
-      .hero-phone {
-        animation: none !important;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>小小会玩 · 官方主页</title>
+<meta name="description" content="小小会玩官方主页：题库速查、修仙工具、秘境倒计时与活动房间，并开放赞助合作与共同开发。">
+<meta name="theme-color" content="#05070f">
+<meta property="og:title" content="小小会玩 · 官方主页">
+<meta property="og:description" content="小小会玩官方主页：题库速查、修仙工具、秘境倒计时与活动房间，并开放赞助合作与共同开发。">
+<meta property="og:type" content="website">
+<link rel="icon" href="./images/app-icon.jpg">
+<link rel="apple-touch-icon" href="./images/app-icon.jpg">
+<style>:root{--bg-portrait:url("../images/bg-starry-portrait-s.jpg");--bg-wide:url("../images/bg-starry-wide-s.jpg");}</style>
+<link rel="stylesheet" href="./assets/site.css?v=70127a26">
 </head>
 <body>
-  <header class="hero wrap">
-    <div class="hero-copy">
-      <div class="brand-row">
-        <img class="brand-icon" src="./images/app-icon.jpg" alt="" width="44" height="44">
-        <p class="brand">会玩小小攻略</p>
-      </div>
-      <h1>把你的名字，留在玩家每天打开的地方</h1>
-      <p class="hero-lead">招收赞助商：稳定曝光、活动宣传位，以及「我的」页长期展示。</p>
+<div class="progress" aria-hidden="true"></div>
+<div class="bg" aria-hidden="true"></div>
+<div class="veil" aria-hidden="true"></div>
+<canvas id="stars" aria-hidden="true"></canvas>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="./index.html">
+      <img src="./images/app-icon.jpg" alt="小小会玩图标" width="33" height="33">
+      <span><b>小小会玩</b><small>OFFICIAL HOME</small></span>
+    </a>
+    <nav class="nav"><a href="#features">功能</a><a href="#tools">工具</a><a href="#admin">后台</a><a href="#join">合作</a><a href="#author">作者</a></nav>
+    <a class="head-app" href="#" data-app="open" aria-label="打开小小会玩"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.2l10 6.8-10 6.8z"/></svg><span class="ha-short">打开</span><span class="ha-long">打开小小会玩</span></a>
+    <a class="head-cta" href="./sponsor.html">赞助合作 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.6l2.5 5.1 5.6.8-4 4 1 5.6-5-2.7-5 2.7 1-5.6-4-4 5.6-.8z"/></svg></a>
+  </div>
+</header>
+<main>
+<section class="hero wrap" id="top">
+  <div class="hero-inner">
+    <div class="hero-copy reveal">
+      <span class="eyebrow"><i></i>小小会玩 · 官方主页</span>
+      <h1><span class="line">会玩的每一局，</span><span class="line grad">都不靠猜</span></h1>
+      <p class="hero-lead">题目、修为、倒计时、房间，一个地方全查到。</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#contact">成为赞助商</a>
-        <a class="btn btn-ghost" href="#shots">看产品界面</a>
+        <a class="btn btn-primary" href="./sponsor.html">成为赞助伙伴<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-toy" href="#" data-todo="toy" data-tip="小玩具马上就来 ✦"><span class="btn-toy-dot" aria-hidden="true"></span>饭烁的小玩具<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.2l10 6.8-10 6.8z"/></svg></a>
+        <a class="btn btn-ghost" href="#features"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.2l10 6.8-10 6.8z"/></svg>看看能做什么</a>
+      </div>
+      <div class="stats"><div class="stat"><b data-count="149">149</b><span>题库条目</span></div><div class="stat"><b data-count="11">11</b><span>工具攻略分类</span></div></div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="halo" aria-hidden="true"></div>
+      <article class="phone phone--left"><img src="./images/时间查看器.png" alt="" loading="lazy" decoding="async" data-view="./images/时间查看器.png" data-title="页面预览"></article>
+      <article class="phone phone--right"><img src="./images/我的.png" alt="" loading="lazy" decoding="async" data-view="./images/我的.png" data-title="页面预览"></article>
+      <article class="phone phone--main"><img src="./images/题库.png" alt="题库页面：搜索题目与奖励标签" fetchpriority="high" decoding="async" data-view="./images/题库.png" data-title="题库页面：搜索题目与奖励标签"></article>
+      <div class="float-chip chip-a"><i></i>题库已收录 149 题</div><div class="float-chip chip-b"><i></i>秘境倒计时 00:09:25</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="features">
+  <div class="sec-head reveal">
+    <p class="kicker">01 / 功能</p>
+    <h2 class="sec-title">四种玩法，四个入口</h2>
+  </div>
+  <div class="features">
+        <article class="feature reveal">
+          <div class="feature-head"><span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="M15.4 15.4l4.4 4.4"/></svg></span><span class="f-num">01</span></div>
+          <h3>题库速查</h3>
+          <p>题干、选项与奖励，搜一下就出来。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature-head"><span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.6 5.8a4 4 0 0 0 5.2 5.2l-8.6 8.6a2.9 2.9 0 0 1-4.1-4.1l8.6-8.6z"/><path d="M5.4 4.2l3.2 3.2"/></svg></span><span class="f-num">02</span></div>
+          <h3>工具 / 攻略</h3>
+          <p>该算的算，该等的等，攻略按玩法归档。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature-head"><span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.4 7-11.2A7 7 0 0 0 5 9.8C5 14.6 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></svg></span><span class="f-num">03</span></div>
+          <h3>活动 / 房间</h3>
+          <p>活动置顶，房间号一键复制。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature-head"><span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M5.2 20c.9-3.9 3.6-6 6.8-6s5.9 2.1 6.8 6"/></svg></span><span class="f-num">04</span></div>
+          <h3>我的 / 赞助</h3>
+          <p>头框、展示页和留言都在这页。</p>
+        </article>
+  </div>
+</section>
+
+<section class="sec wrap" id="tools">
+  <div class="sec-head reveal">
+    <p class="kicker">02 / 工具</p>
+    <h2 class="sec-title">每天都会打开的那几个</h2>
+  </div>
+  <div class="tools">
+        <article class="tool reveal">
+          <div class="tool-thumb"><img src="./images/修仙计算器.png" alt="修仙计算器界面" loading="lazy" decoding="async" data-view="./images/修仙计算器.png" data-title="修仙计算器界面"><span class="zoom-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="M15.4 15.4l4.4 4.4"/></svg></span></div>
+          <span class="tool-idx">01</span>
+          <div class="tool-body">
+            <h3>修仙计算器</h3>
+            <p>心法、功法、道心一起算，直接给用时。</p>
+          </div>
+        </article>
+        <article class="tool reveal">
+          <div class="tool-thumb"><img src="./images/时间查看器.png" alt="时间查看器界面" loading="lazy" decoding="async" data-view="./images/时间查看器.png" data-title="时间查看器界面"><span class="zoom-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="M15.4 15.4l4.4 4.4"/></svg></span></div>
+          <span class="tool-idx">02</span>
+          <div class="tool-body">
+            <h3>时间查看器</h3>
+            <p>秘境、飞升、赛季、灵泉倒计时。</p>
+          </div>
+        </article>
+        <article class="tool reveal">
+          <div class="tool-thumb"><img src="./images/天书任务.png" alt="天书任务界面" loading="lazy" decoding="async" data-view="./images/天书任务.png" data-title="天书任务界面"><span class="zoom-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="M15.4 15.4l4.4 4.4"/></svg></span></div>
+          <span class="tool-idx">03</span>
+          <div class="tool-body">
+            <h3>天书任务</h3>
+            <p>一周任务与活跃度奖励对照。</p>
+          </div>
+        </article>
+        <article class="tool reveal">
+          <div class="tool-thumb"><img src="./images/拆弹猫.png" alt="拆弹猫记牌界面" loading="lazy" decoding="async" data-view="./images/拆弹猫.png" data-title="拆弹猫记牌界面"><span class="zoom-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="M15.4 15.4l4.4 4.4"/></svg></span></div>
+          <span class="tool-idx">04</span>
+          <div class="tool-body">
+            <h3>拆弹猫记牌</h3>
+            <p>标准牌堆与 6 人局牌数参考。</p>
+          </div>
+        </article>
+        <article class="tool reveal">
+          <div class="tool-thumb"><img src="./images/透明头像工具制作.png" alt="透明头像生成界面" loading="lazy" decoding="async" data-view="./images/透明头像工具制作.png" data-title="透明头像生成界面"><span class="zoom-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="M15.4 15.4l4.4 4.4"/></svg></span></div>
+          <span class="tool-idx">05</span>
+          <div class="tool-body">
+            <h3>透明头像</h3>
+            <p>浏览器里做透明底头像，直接导出。</p>
+          </div>
+        </article><article class="tool tool--more reveal">
+          <div class="tool-thumb tool-thumb--more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></div>
+          <div class="tool-body">
+            <h3>更多在路上</h3>
+            <p>自动化、悬浮窗搜题、小程序版。</p>
+          </div>
+        </article>
+  </div>
+</section>
+
+<section class="sec wrap" id="admin">
+  <div class="sec-head reveal">
+    <p class="kicker">03 / 后台</p>
+    <h2 class="sec-title">内容自己管</h2>
+    <p class="sec-sub">题库、活动、房间、赞助与权限，一套后台全管。高级赞助可开专属账号。</p>
+  </div>
+  <div class="shots">
+        <article class="shot reveal">
+          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <img src="./images/后台.png" alt="后台首页" loading="lazy" decoding="async" data-view="./images/后台.png" data-title="后台首页">
+          <span class="zoom-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="M15.4 15.4l4.4 4.4"/></svg></span>
+          <p class="shot-cap">后台首页</p>
+        </article>
+        <article class="shot reveal">
+          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <img src="./images/后台题库.png" alt="题库管理" loading="lazy" decoding="async" data-view="./images/后台题库.png" data-title="题库管理">
+          <span class="zoom-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="M15.4 15.4l4.4 4.4"/></svg></span>
+          <p class="shot-cap">题库管理</p>
+        </article>
+  </div>
+</section>
+
+<section class="sec wrap" id="join">
+  <div class="sec-head reveal">
+    <p class="kicker">04 / 合作</p>
+    <h2 class="sec-title">一起把它做久一点</h2>
+    <p class="sec-sub">资源让它跑下去，伙伴让它跑得更快。</p>
+  </div>
+  <div class="join">
+        <article class="join-card  reveal">
+          <h3>赞助伙伴</h3>
+          <p class="join-sub">名字留在玩家每天打开的地方</p>
+          <ul class="points"><li>首页与「我的」页长期展示位</li><li>活动推荐优先，赞助内容靠前</li><li>专属头框与独立展示页</li><li>高级赞助开放后台账号</li></ul>
+          <div class="cta-row">
+            <a class="line-btn solid-line" href="./sponsor.html">查看赞助方案<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="join-card dev reveal">
+          <h3>开发伙伴</h3>
+          <p class="join-sub">把想法变成能跑起来的东西</p>
+          <ul class="points"><li>招全栈 / 前端，共建站点与后台</li><li>自动化、App、小程序排队开发</li><li>题库与攻略供稿，采纳后署名</li></ul>
+          <div class="cta-row">
+            <a class="line-btn " href="./join.html">了解合作方式<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+  </div>
+</section>
+
+<section class="sec wrap" id="author">
+  <div class="author reveal">
+    <div class="author-main">
+      <div class="ava"><img src="./images/app-icon.jpg" alt="饭烁头像" loading="lazy" decoding="async"></div>
+      <div class="author-intro">
+        <p class="kicker">05 / 作者</p>
+        <h2 class="author-name">饭烁</h2>
+        <p class="author-role">全栈工程开发 · 小小会玩作者</p>
+        <p class="author-bio">写页面、写后台，也写这些小工具。</p>
       </div>
     </div>
-    <div class="hero-phone">
-      <div class="phone">
-        <img class="phone-screen" src="./images/shot-bank.png?v=3" alt="题库页真实截图" width="390" height="844">
-      </div>
+    <dl class="id-list">
+          <div class="id-row">
+            <dt>会玩 ID</dt>
+            <dd>bieqiangwodebabiwawa</dd>
+            <button class="copy" type="button" data-copy="bieqiangwodebabiwawa" data-label="复制">复制</button>
+          </div>
+          <div class="id-row">
+            <dt>房间号</dt>
+            <dd>503123</dd>
+            <button class="copy" type="button" data-copy="503123" data-label="复制">复制</button>
+          </div>
+          <div class="id-row">
+            <dt>微信</dt>
+            <dd>Fanys0507</dd>
+            <button class="copy" type="button" data-copy="Fanys0507" data-label="复制">复制</button>
+          </div>
+    </dl>
+    <div class="author-actions"><button class="line-btn" type="button" data-copy="Fanys0507" data-label="加微信聊"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.2c0-3 2.8-5.2 6-5.2s6 2.2 6 5.2-2.8 5.2-6 5.2c-.6 0-1.2-.1-1.7-.2L6 17.6l.6-2.3A5.6 5.6 0 0 1 4 11.2z"/><path d="M14 16c0-2.2 2.1-3.8 4.5-3.8S23 13.8 23 16s-2.1 3.8-4.5 3.8c-.5 0-.9-.1-1.3-.2L15.6 20l.4-1.6A4.4 4.4 0 0 1 14 16z"/></svg>加微信聊</button><a class="line-btn" href="#tools"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg>逛逛小站</a></div>
+  </div>
+</section></main>
+<footer class="foot">
+  <div class="wrap">
+    <b>小小会玩 · 官方主页</b>
+    <span class="dot">·</span>© by_fanys
+  </div>
+</footer>
+<nav class="dock" aria-label="快捷导航">
+  <a href="./index.html#features"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.6"/></svg>功能</a><a href="./index.html#tools"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.6 5.8a4 4 0 0 0 5.2 5.2l-8.6 8.6a2.9 2.9 0 0 1-4.1-4.1l8.6-8.6z"/><path d="M5.4 4.2l3.2 3.2"/></svg>工具</a><a href="./index.html#join"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.6l2.5 5.1 5.6.8-4 4 1 5.6-5-2.7-5 2.7 1-5.6-4-4 5.6-.8z"/></svg>赞助</a><a href="./index.html#author"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M5.2 20c.9-3.9 3.6-6 6.8-6s5.9 2.1 6.8 6"/></svg>作者</a>
+</nav>
+<button class="to-top" type="button" aria-label="返回顶部" title="返回顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg>
+</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="app-modal" id="appModal" aria-hidden="true">
+  <div class="app-modal-card" role="dialog" aria-modal="true" aria-labelledby="appModalTitle">
+    <button class="app-modal-x" type="button" data-app-close aria-label="关闭提示">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg>
+    </button>
+    <p class="app-badge"><i></i>APP · 暂未发布</p>
+    <h3 id="appModalTitle">小小会玩暂未发布</h3>
+    <p class="app-desc">App 还在最后调试，暂时下载不到。赞助会用在服务器、上架和后续开发上；想第一时间玩到，先加微信留个位置。</p>
+    <div class="app-modal-actions">
+      <a class="btn btn-primary" href="./sponsor.html">成为赞助伙伴<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg></a>
+      <button class="btn btn-ghost" type="button" data-copy="Fanys0507" data-label="加微信">加微信</button>
     </div>
-  </header>
-
-  <section class="gallery" id="shots">
-    <div class="gallery-head wrap">
-      <p class="kicker">PRODUCT</p>
-      <h2 class="title">真实产品截图</h2>
-      <p class="sub">左右滑动：题库、工具、拆弹猫、活动与赞助展示位。</p>
-    </div>
-    <div class="rail" aria-label="产品截图滑动区">
-      <figure class="rail-item">
-        <div class="phone">
-          <img class="phone-screen" src="./images/shot-bank.png?v=3" alt="题库页截图" width="390" height="844" loading="lazy">
-        </div>
-        <figcaption class="rail-cap">题库速查</figcaption>
-      </figure>
-      <figure class="rail-item">
-        <div class="phone">
-          <img class="phone-screen" src="./images/shot-guide.png?v=3" alt="工具攻略页截图" width="390" height="844" loading="lazy">
-        </div>
-        <figcaption class="rail-cap">工具 / 攻略</figcaption>
-      </figure>
-      <figure class="rail-item">
-        <div class="phone">
-          <img class="phone-screen" src="./images/shot-xwcalc.png?v=3" alt="修为计算器截图" width="390" height="844" loading="lazy">
-        </div>
-        <figcaption class="rail-cap">修为计算器</figcaption>
-      </figure>
-      <figure class="rail-item">
-        <div class="phone">
-          <img class="phone-screen" src="./images/shot-cat.png?v=3" alt="拆弹猫页截图" width="390" height="844" loading="lazy">
-        </div>
-        <figcaption class="rail-cap">拆弹猫牌数</figcaption>
-      </figure>
-      <figure class="rail-item">
-        <div class="phone">
-          <img class="phone-screen" src="./images/shot-activity.png?v=3" alt="活动房间页截图" width="390" height="844" loading="lazy">
-        </div>
-        <figcaption class="rail-cap">活动 / 房间</figcaption>
-      </figure>
-      <figure class="rail-item">
-        <div class="phone">
-          <img class="phone-screen" src="./images/shot-mine.png?v=3" alt="我的页赞助商截图" width="390" height="844" loading="lazy">
-        </div>
-        <figcaption class="rail-cap">赞助商展示位</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="admin-show wrap" id="admin">
-    <div class="gallery-head">
-      <p class="kicker">ADMIN</p>
-      <h2 class="title">管理后台</h2>
-      <p class="sub">登录页与题库管理，电脑框展示。</p>
-    </div>
-    <div class="laptop-stack">
-      <figure class="laptop">
-        <div class="laptop-lid">
-          <div class="laptop-camera" aria-hidden="true"></div>
-          <img class="laptop-screen" src="./images/admin-login.jpg?v=1" alt="小小会玩管理后台登录" width="1024" height="500" loading="lazy">
-        </div>
-        <div class="laptop-base" aria-hidden="true"></div>
-        <figcaption class="laptop-cap">后台登录</figcaption>
-      </figure>
-      <figure class="laptop">
-        <div class="laptop-lid">
-          <div class="laptop-camera" aria-hidden="true"></div>
-          <img class="laptop-screen" src="./images/admin-questions.png?v=1" alt="题库管理后台界面" width="1024" height="565" loading="lazy">
-        </div>
-        <div class="laptop-base" aria-hidden="true"></div>
-        <figcaption class="laptop-cap">题库管理</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="benefits wrap" id="benefit">
-    <p class="kicker">SPONSOR</p>
-    <h2 class="title">赞助能得到什么</h2>
-    <p class="sub">跟着日常使用反复出现，而不是一次性刷屏。</p>
-    <ul class="benefit-list">
-      <li>
-        <strong>「我的」页常驻展示</strong>
-        <span>头像、名称、会玩 ID / 微信与简介，玩家可点开查看。</span>
-      </li>
-      <li>
-        <strong>活动宣传优先沟通</strong>
-        <span>需要曝光的活动可联系作者；赞助商可免费提供宣传位。</span>
-      </li>
-      <li>
-        <strong>资源贡献致谢</strong>
-        <span>提供题库等信息的伙伴，也会在相关页面获得展示机会。</span>
-      </li>
-    </ul>
-  </section>
-
-  <section class="contact" id="contact">
-    <p class="kicker">CONTACT</p>
-    <h2 class="title">聊聊合作</h2>
-    <p class="sub">加微信或进房找我，说明想展示的内容与期望位置。</p>
-    <div class="contact-meta">
-      <div>微信<br><b>Fanys0507</b></div>
-      <div>会玩房间号<br><b>503123</b></div>
-    </div>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#contact">微信 Fanys0507</a>
-      <a class="btn btn-ghost" href="#contact">房间号 503123</a>
-    </div>
-  </section>
-
-  <footer class="foot">会玩小小攻略 · 赞助合作页 · ©by_fanys</footer>
+    <p class="app-note">微信 Fanys0507 · 房间 503123</p>
+  </div>
+</div>
+<script src="./assets/site.js?v=76761f12" defer></script>
 </body>
 </html>
